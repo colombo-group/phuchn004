@@ -1,0 +1,21 @@
+body{
+	background: #d5e3ca;
+	padding: 50px;
+}
+.wrapper{
+	width: 350px;
+	margin: 0 auto;
+}
+.header{
+	background-image: url("image/head.png");
+	background-repeat: repeat-x;
+	width: 291px;
+	height: 217px;
+}
+.content{
+	background-image: url("image/content.png");
+	width: 291px;
+	height: 253px;
+	margin-top: 10px;
+	position: relative;
+}

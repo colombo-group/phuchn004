@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Máy tính</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="Calculator.css">
+</head>
+<body style="background:#424242;">
+	<table>
+		<tr>
+			<td colspan="4"><input type="text" name="" id="result" maxlength="11" disabled value="0"></td>
+		</tr>
+		<tr>
+			<td><button>m+</button></td>
+			<td><button>m-</button></td>
+			<td><button>mc</button></td>
+			<td><button onclick="act(':')" id=":">/</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input(7)" id="7">7</button></td>
+			<td><button onclick="input(8)" id="8">8</button></td>
+			<td><button onclick="input(9)" id="9">9</button></td>
+			<td><button onclick="act('X')" id="X">X</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input(4)" id="4">4</button></td>
+			<td><button onclick="input(5)" id="5">5</button></td>
+			<td><button onclick="input(6)" id="6">6</button></td>
+			<td><button onclick="act('+')" id="+">+</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input(1)" id="1">1</button></td>
+			<td><button onclick="input(2)" id="2">2</button></td>
+			<td><button onclick="input(3)" id="3">3</button></td>
+			<td rowspan="2"><button style="width:50px; height:100%;	background:#e4b524" onClick="Tinh()">=</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="input(0)" id="0">0</button></td>
+			<td><button onclick="input('.')" id=".">.</button></td>
+			<td><button onclick="clearall()" id="C">C</button></td>
+		</tr>
+	</table>
+	<script type="text/javascript" src="calculator.js"></script>
+</body>
+</html>
