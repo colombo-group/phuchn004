@@ -4,6 +4,32 @@ dau = "";
 so2 = 0;
 hienthi="";
 ok ="";
+ma = 0;
+function setM(m){
+	switch(m){
+		case "mc":
+			document.getElementById('m').innerHTML = "";
+			ma = 0;
+			break;
+		case "mr":
+			document.getElementById('m').innerHTML = "M";
+			document.getElementById('result').value = (ma);
+			hienthi=ma;
+			break;
+		case "m+":
+			document.getElementById('m').innerHTML = "M";
+			a = hienthi;
+			a = parseFloat(a);
+			ma += a;
+			break;	
+		case "m-":
+			document.getElementById('m').innerHTML = "M";
+			a = hienthi;
+			a = parseFloat(a);
+			ma -= a;
+			break;	
+	}
+}
 function check(x){
 	if (x=="1" || x=="2" || x=="3" || x=="4" || x=="5" || x=="6" || x=="7" || x=="8" || x=="9" || x=="0" || x==".")
 		return true;
@@ -47,29 +73,27 @@ function act(x){
 			a = "X";
 		else
 			if (so.indexOf("+") > -1)
-				a = "+";
-	if (a!=""){				
+				a = "+";	
+	if (a!=""){			
 		var st = so.split(a);
 		so1 = parseFloat(st[0]);
 		if (isNaN(so1)) so1=0;
-		so2 = parseFloat(st[1]);
-		if (isNaN(so2)) so2=0;
 		switch (a){
 			case ":" :
-				so1 = so1/so2;
+				so1 = so1/1;
 				break;
 			case "X" :
-				so1 = so1*so2;
+				so1 = so1*1;
 				break;
 			case "+" :
-				so1 = so1+so2;
+				so1 = so1+0;
 				break;		
 		}
 		so = String(so1);
-		document.getElementById("result").value = so;
+		hienthi = so;
+		document.getElementById("result").value = hienthi;
 	}
 	so += x;	
-
 }
 
 function Tinh(){
@@ -101,6 +125,7 @@ function Tinh(){
 				break;		
 		}
 		so = String(so1);
+		hienthi = so;
 		document.getElementById("result").value = so;
 	
 	}
