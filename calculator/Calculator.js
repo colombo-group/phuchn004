@@ -54,6 +54,14 @@ function input(x) {
 	else
 		hienthi = hienthi + String(x);
 	so += String(x);
+	if (x=="0"){
+		dem = 0;
+		for (i=0; i<hienthi.length; i++)
+			if (hienthi[i]=="0")
+				dem++;
+		if (dem==hienthi.length)
+			hienthi = "0";
+	}
 	document.getElementById("result").value = hienthi;
 }
 function clearall(){
@@ -78,20 +86,39 @@ function act(x){
 		var st = so.split(a);
 		so1 = parseFloat(st[0]);
 		if (isNaN(so1)) so1=0;
-		switch (a){
-			case ":" :
-				so1 = so1/1;
-				break;
-			case "X" :
-				so1 = so1*1;
-				break;
-			case "+" :
-				so1 = so1+0;
-				break;		
+		so2 = parseFloat(st[1]);
+		if (isNaN(so2)){
+			switch (a){
+				case ":" :
+					so1 = so1/1;
+					break;
+				case "X" :
+					so1 = so1*1;
+					break;
+				case "+" :
+					so1 = so1+0;
+					break;		
+			}
+			so = String(so1);
+			hienthi = so;
+			document.getElementById("result").value = hienthi;
 		}
-		so = String(so1);
-		hienthi = so;
-		document.getElementById("result").value = hienthi;
+		else{
+			switch (a){
+				case ":" :
+					so1 = so1/so2;
+					break;
+				case "X" :
+					so1 = so1*so2;
+					break;
+				case "+" :
+					so1 = so1+so2;
+					break;		
+			}
+			so = String(so1);
+			hienthi = so;
+			document.getElementById("result").value = hienthi;
+		}
 	}
 	so += x;	
 }
